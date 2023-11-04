@@ -1,4 +1,4 @@
-export const navbarLinks = [
+export const categories = [
   {
     id: 1,
     name: "Home",
@@ -16,7 +16,7 @@ export const navbarLinks = [
   },
   {
     id: 4,
-    name: "Teens",
-    href: "/teens",
+    name: "Kids",
+    href: "/kids",
   },
 ];

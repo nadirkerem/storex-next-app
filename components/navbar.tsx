@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ShoppingBag } from "lucide-react";
 
-import { navbarLinks } from "@/lib/data";
+import { categories } from "@/lib/data";
 
 import { Button } from "@/components/ui/button";
 
@@ -22,21 +22,21 @@ export default function Navbar() {
         </Link>
 
         <nav className="hidden gap-12 lg:flex 2xl:ml-16">
-          {navbarLinks.map((link) => (
-            <div key={link.id}>
-              {pathname === link.href ? (
+          {categories.map((category) => (
+            <div key={category.id}>
+              {pathname === category.href ? (
                 <Link
                   className="text-lg font-semibold text-primary"
-                  href={link.href}
+                  href={category.href}
                 >
-                  {link.name}
+                  {category.name}
                 </Link>
               ) : (
                 <Link
                   className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-primary"
-                  href={link.href}
+                  href={category.href}
                 >
-                  {link.name}
+                  {category.name}
                 </Link>
               )}
             </div>
