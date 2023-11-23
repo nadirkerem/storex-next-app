@@ -45,8 +45,8 @@ export default async function Latest() {
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {data.map((product) => (
             <div key={product._id} className="group relative">
-              <Link href={`/product/${product.slug}`}>
-                <div className="aspect-square w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-80">
+              <div className="aspect-square w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-80">
+                <Link href={`/product/${product.slug}`}>
                   <Image
                     src={product.imageUrl}
                     alt="Product Image"
@@ -54,24 +54,26 @@ export default async function Latest() {
                     width={300}
                     height={300}
                   />
-                </div>
+                </Link>
+              </div>
 
-                <div className="mt-4 flex justify-between">
-                  <div>
-                    <h3 className="text-sm text-gray-700">{product.name}</h3>
-                    <p className="mt-1 text-sm text-gray-500">
-                      <Link
-                        href={`/${product.categoryName.toLocaleLowerCase()}`}
-                      >
-                        {product.categoryName}
-                      </Link>
-                    </p>
-                  </div>
-                  <p className="text-sm font-medium text-gray-900">
-                    ${product.price}
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-gray-700">
+                    <Link href={`/product/${product.slug}`}>
+                      {product.name}
+                    </Link>
+                  </h3>
+                  <p className="mt-1 text-sm text-gray-500">
+                    <Link href={`/${product.categoryName.toLocaleLowerCase()}`}>
+                      {product.categoryName}
+                    </Link>
                   </p>
                 </div>
-              </Link>
+                <p className="text-sm font-medium text-gray-900">
+                  ${product.price}
+                </p>
+              </div>
             </div>
           ))}
         </div>
