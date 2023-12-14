@@ -11,8 +11,8 @@ export default function StripeSuccessPage() {
           <h3 className="text-base font-semibold text-gray-900 md:text-2xl">
             Payment Done!
           </h3>
-          <p className="text-sm font-normal text-gray-500 md:text-base">
-            Thank you for your purchase.
+          <p className="mt-5 text-sm font-normal text-gray-500 md:text-base">
+            Thank you for your purchase. We hope you enjoy our products.
           </p>
 
           <Button asChild className="mt-5">
