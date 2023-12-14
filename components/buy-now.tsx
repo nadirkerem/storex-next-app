@@ -32,6 +32,8 @@ export default function BuyNow({
   };
 
   return (
-    <Button onClick={() => handleBuyNow(product.price_id)}>Add To Cart</Button>
+    <Button variant="outline" onClick={() => handleBuyNow(product.price_id)}>
+      Buy Now
+    </Button>
   );
 }

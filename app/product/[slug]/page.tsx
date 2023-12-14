@@ -1,5 +1,6 @@
 import { fullProduct } from "@/app/interface";
 import AddToCart from "@/components/add-to-cart";
+import BuyNow from "@/components/buy-now";
 
 import ImageGallery from "@/components/image-gallery";
 import { Button } from "@/components/ui/button";
@@ -25,6 +26,8 @@ async function getData(slug: string) {
 
   return data;
 }
+
+export const dynamic = "force-dynamic";
 
 export default async function ProductPage({
   params,
@@ -90,7 +93,15 @@ export default async function ProductPage({
                 image={data.images[0]}
                 price_id={data.price_id}
               />
-              <Button variant={"secondary"}>Buy Now</Button>
+              <BuyNow
+                key={data._id}
+                name={data.name}
+                description={data.description}
+                price={data.price}
+                currency="USD"
+                image={data.images[0]}
+                price_id={data.price_id}
+              />
             </div>
 
             <p className="mt-12 text-base tracking-wide text-gray-600">
