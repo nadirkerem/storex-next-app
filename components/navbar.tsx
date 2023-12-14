@@ -7,9 +7,11 @@ import { ShoppingBag } from "lucide-react";
 import { categories } from "@/lib/data";
 
 import { Button } from "@/components/ui/button";
+import { useShoppingCart } from "use-shopping-cart";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const { handleCartClick } = useShoppingCart();
 
   return (
     <header className="mb-8 border-b">
@@ -47,6 +49,7 @@ export default function Navbar() {
           <Button
             variant={"ghost"}
             className="flex h-16 w-16 flex-col gap-y-1.5 rounded-none"
+            onClick={() => handleCartClick()}
           >
             <ShoppingBag />
             <span className="hidden text-xs font-semibold text-gray-500 sm:block">
